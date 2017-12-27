@@ -476,14 +476,41 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>::RTOS</GroupName>
+        </Group>
       </Groups>
     </Target>
   </Targets>
 
   <RTE>
     <apis/>
-    <components/>
-    <files/>
+    <components>
+      <component Cbundle="RT-Thread" Cclass="RTOS" Cgroup="kernel" Cvendor="rt-thread" Cversion="2.1.2" condition="CMSIS Core with RTOS">
+        <package license="documentation/License.txt" name="rtthread" schemaVersion="1.4" supportContact="http://www.rt-thread.org" url="http://www.rt-thread.org/download/mdk/" vendor="rt-thread" version="2.1.1"/>
+        <targetInfos>
+          <targetInfo name="LED"/>
+        </targetInfos>
+      </component>
+    </components>
+    <files>
+      <file attr="config" category="source" name="bsp\board.c" version="2.1.1">
+        <instance index="0">RTE\RTOS\board.c</instance>
+        <component Cbundle="RT-Thread" Cclass="RTOS" Cgroup="kernel" Cvendor="rt-thread" Cversion="2.1.2" condition="CMSIS Core with RTOS"/>
+        <package license="documentation/License.txt" name="rtthread" schemaVersion="1.4" supportContact="http://www.rt-thread.org" url="http://www.rt-thread.org/download/mdk/" vendor="rt-thread" version="2.1.1"/>
+        <targetInfos>
+          <targetInfo name="LED"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="bsp\rtconfig.h" version="2.1.1">
+        <instance index="0">RTE\RTOS\rtconfig.h</instance>
+        <component Cbundle="RT-Thread" Cclass="RTOS" Cgroup="kernel" Cvendor="rt-thread" Cversion="2.1.2" condition="CMSIS Core with RTOS"/>
+        <package license="documentation/License.txt" name="rtthread" schemaVersion="1.4" supportContact="http://www.rt-thread.org" url="http://www.rt-thread.org/download/mdk/" vendor="rt-thread" version="2.1.1"/>
+        <targetInfos>
+          <targetInfo name="LED"/>
+        </targetInfos>
+      </file>
+    </files>
   </RTE>
 
 </Project>
